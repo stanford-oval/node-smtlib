@@ -1,6 +1,6 @@
 {
   "name": "smtlib",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Javascript wrapper with a Z3-ish API for SMT-LIB 2.0, the language of Satisfiability Modulo Theories solvers",
   "main": "index.js",
   "scripts": {
