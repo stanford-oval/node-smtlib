@@ -22,7 +22,7 @@ let solver = new smt.LocalCVC4Solver('QF_ALL_SUPPORTED');
 solver.add(smt.DeclareFun('x', [], 'Bool'))
 solver.add(smt.DeclareFun('y', [], 'Bool'))
 solver.assert(smt.And(smt.Or('x', 'y'), smt.Not('x'), smt.Not('y')));
-solver.checkSat().then((sat) => ...).catch((e) => ...);
+solver.checkSat().then(([sat, assignment]) => ...).catch((e) => ...);
 ```
 
 The solver also includes code to interact with a locally installed
