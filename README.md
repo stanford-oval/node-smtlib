@@ -1,5 +1,7 @@
 # Node.js API for SMT-LIB 2.0
 
+[![Build Status](https://travis-ci.org/Stanford-Mobisocial-IoT-Lab/node-smtlib.svg?branch=master)](https://travis-ci.org/Stanford-Mobisocial-IoT-Lab/node-smtlib) [![Coverage Status](https://coveralls.io/repos/github/Stanford-Mobisocial-IoT-Lab/node-smtlib/badge.svg?branch=master)](https://coveralls.io/github/Stanford-Mobisocial-IoT-Lab/node-smtlib?branch=master) [![Dependency Status](https://david-dm.org/Stanford-Mobisocial-IoT-Lab/node-smtlib/status.svg)](https://david-dm.org/Stanford-Mobisocial-IoT-Lab/node-smtlib)
+
 SMT-LIB 2.0 is an interoperability format to communicate with
 different SMT solvers, such as CVC4 or Z3.
 
@@ -25,5 +27,5 @@ solver.assert(smt.And(smt.Or('x', 'y'), smt.Not('x'), smt.Not('y')));
 solver.checkSat().then(([sat, assignment]) => ...).catch((e) => ...);
 ```
 
-The solver also includes code to interact with a locally installed
+The library also includes code to interact with a locally installed
 CVC4, as an external process.
