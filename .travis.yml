@@ -1,0 +1,22 @@
+branches:
+  except:
+  - "/^wip/"
+language: node_js
+node_js:
+- '8'
+before_install:
+- mkdir cvc4/
+- wget https://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.5-x86_64-linux-opt
+  -O cvc4/cvc4
+- chmod +x cvc4/cvc4
+- export PATH="`pwd`/cvc4:$PATH"
+- yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
+script:
+- yarn lint
+- TZ="America/Los_Angeles" yarn test
+after_success: yarn run coverage
+env:
+  global:
+    secure: iPvK5dAWvSwP5NT3a9DReme4J7/qYjTWYPgnu8aLa09IOhAkBVcVhzB3bGH+MNYxWdJGkRrPBgYj1ovP4LbjOJKr3kLc7PQkhbvU9qxHlS+OOJFwzgTiKDGAHv4Bm+zVuobAdSBhm46kV0C24K9fS+mJYNAOTkqI5HDBEzWG75pzrTsfnHYSUULk6TCICStG1h+9ym0iWOWTpahnc1c/iNhc6MjThBGD36QilaJZ62Xy5h+rh5fZm79KfCVeiWAXlEtzWk5MayhVasfKBnqyeG8ij36lXxOCk0BECHVAxEBa5yi6dDtnRpmZU7G+U7XrTox/F5BPirbxqf9+dqrWgGWFb3iM1ZaO5VplR9vMwl3GF8eCDSe75PtIGYg9kwdsFRxPwPEaDDnHxZGGUNvkR4yKxkHH9PkLinKvfdCJm4aueLf+P0vsHvFiaNb8RwmmhWf1yfeRO2KuSnlV4EbTMM0UZwWPiTLWP5YMs4AJjWJWpy9+/aOUFq/t1g1VbnRdUpCy3yEYGRRLiN8Wy96UP34vcQBI7mPGJ4xNXwDCQzAHsP/QpWHkw2H/H6QxVZXB2VjdWUeVLVTOIZNCuKow9AZWEn+99egnFuwy/EnVrfOxFxviWZtRamSAVS8HdUPDF5xCo9fMXPlUasmyA15qSDkNM8ASHZHrnMCvfpKP4Ic=

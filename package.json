@@ -3,12 +3,19 @@
   "version": "0.1.1",
   "description": "A Javascript wrapper with a Z3-ish API for SMT-LIB 2.0, the language of Satisfiability Modulo Theories solvers",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "byline": "^5.0.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "eslint": "^4.19.1",
+    "nyc": "^11.7.1"
+  },
+  "scripts": {
+    "lint": "eslint ./index",
+    "test": "nyc node ./test/test",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   }
 }
