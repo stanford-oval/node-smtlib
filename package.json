@@ -3,7 +3,8 @@
   "version": "0.1.1",
   "description": "A Javascript wrapper with a Z3-ish API for SMT-LIB 2.0, the language of Satisfiability Modulo Theories solvers",
   "main": "index.js",
-  "author": "",
+  "author": "Giovanni Campagna <gcampagn@cs.stanford.edu>",
+  "repository": "https://github.com/stanford-oval/node-smtlib",
   "license": "MIT",
   "dependencies": {
     "byline": "^5.0.0"

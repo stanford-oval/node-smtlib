@@ -1,6 +1,6 @@
 # Node.js API for SMT-LIB 2.0
 
-[![Build Status](https://travis-ci.com/Stanford-Mobisocial-IoT-Lab/node-smtlib.svg?branch=master)](https://travis-ci.com/Stanford-Mobisocial-IoT-Lab/node-smtlib) [![Coverage Status](https://coveralls.io/repos/github/Stanford-Mobisocial-IoT-Lab/node-smtlib/badge.svg?branch=master)](https://coveralls.io/github/Stanford-Mobisocial-IoT-Lab/node-smtlib?branch=master) [![Dependency Status](https://david-dm.org/Stanford-Mobisocial-IoT-Lab/node-smtlib/status.svg)](https://david-dm.org/Stanford-Mobisocial-IoT-Lab/node-smtlib) [![Greenkeeper badge](https://badges.greenkeeper.io/Stanford-Mobisocial-IoT-Lab/node-smtlib.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.com/stanford-oval/node-smtlib.svg?branch=master)](https://travis-ci.com/stanford-oval/node-smtlib) [![Coverage Status](https://coveralls.io/repos/github/stanford-oval/node-smtlib/badge.svg?branch=master)](https://coveralls.io/github/stanford-oval/node-smtlib?branch=master) [![Dependency Status](https://david-dm.org/stanford-oval/node-smtlib/status.svg)](https://david-dm.org/stanford-oval/node-smtlib) [![Greenkeeper badge](https://badges.greenkeeper.io/stanford-oval/node-smtlib.svg)](https://greenkeeper.io/)
 
 SMT-LIB 2.0 is an interoperability format to communicate with
 different SMT solvers, such as CVC4 or Z3.
