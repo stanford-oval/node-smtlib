@@ -5,6 +5,9 @@ language: node_js
 node_js:
 - '10'
 - '12'
+env:
+  global:
+  - COVERALLS_PARALLEL=true
 before_install:
 - mkdir cvc4/
 - wget https://github.com/CVC4/CVC4/releases/download/1.7/cvc4-1.7-x86_64-linux-opt -O cvc4/cvc4
@@ -15,8 +18,6 @@ script:
 - TZ="America/Los_Angeles" npm run test
 after_success: npm run coverage
 notifications:
+  webhooks: https://coveralls.io/webhook
   slack:
     secure: sdJCqdoH3Sry2mQx8XPed45IrZ3a1kUmZczxIrljlVsV0JMfhOdG7eDLIhwvfCPKBEU2EQmo6B9AkVojul3x+Jm44AUB1KjjqJ7u7cu9C6jBofE9UMNQ1+OXSTkSuQi75D2lMxi5ZsMYiEU/BvkbBCoxMR7ej9DV7ZTUCBz8JsXiiEH4RflfUBvZ2U4ys2C93v0xw92HAbLUQgTweYu9jug77pbN9Brm3wfOnjk0JfjJGDEiS3+ebaPkPtiB+V4GMZD3qiwHl2TBmMe84b7KrAe3zG5FzQ8yFXFR+jLO8u/88O//UcIp1epeFgA0alu6vcwdF1ITi6OVWJNrSqM2Zu7wuor3U9jSFsX3PkOjbWK1Mnm8qatZo/F6Zc8UxFN9/NAttjVWEfu3UTUSSk53MWz4sIP4kJy6Gqzzj+wdXnjrWE9LxnuSJxCWBTiWD0oOulDoa0mUgCrcVN+AmXxHvMpWCF4beTwIPdfSD1RAgbbnN4rx8/1iRe/PpRh2G7sGQVFcwZCPpRHQPjAGX0QU5MgG4dWrJJImv68/iYkQgEyW9A9DGaWbHl42gh3rXKuv0EPkKe2+G0/ENhNXsFHhhmB9dOVopKQ6Pgo4i1D8F4NPi0mKjV+iEFtrBbB8J2ROspS1q9LDs51s/TlDrm/+7wBurooMCPFBAXRAJb3xXtM=
-env:
-  global:
-    secure: iUytRMxlkR5VHPD+U9z2U0wrjzRx4M4Frj+EUM6e2WeTS8YNoplibERx7jaiBvdUZEHB+a3v2yuamCMKoGN9BJKc20umoj9o7pz4542v0b/VGyQIVasuuqgy8/z2oz1YHw3mDdp8TfoosBglRFj0Cd4VU2abKs9fMYcBgzvHZdUJDBuPVg5AEst4zDFfGmC6aodjlobz57fZX7xuHu7mXLcRVFQM/W6G+sZbyWoHmY2TvQoYybukpPMd9o5GN5y3gI6vDLxCWa+InUk5fYq60l0f23mWZrAhpCsdbj2wmc4yvNUktNGSy6+I8TwByDJCMD54O2zjYdfl9mg24EOWaqJS/cubjbSC9EYPHss5rlIAWM/WPAgf/ZcirrdjHX6cHqkr0cEXdwFZSBaYWhwGy8mxYKFXgC9ld3gSyK7Q8amvImmbBZ2XRdYsVknl/Iu1E9qf9km2s29aH1A2bVmOet9WMezzZwh3OwUtFsrIY8PUJTAu4tvm1kA+IaWPOAOYZzEPJ0HpyNTAs+y2jKq3Qqm4EU5+pJILsoKh/nhXCH5temMtHZ51Z/OxVW2dc2Qcx5CgsUeuZDcRpv8H3HZ3VT93MEKqd9HT0RHwbaU9uUK+TLT7KgUkiAVwZGF5vyluNR1yWOlY+mtWRcjci0dfHawVSaoo/qNtMNH7II1Gykg=
