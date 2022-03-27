@@ -12,9 +12,10 @@ export default class BaseSmtSolver {
     timeLimit : number;
 
     constructor(logic : string) {
-        this._statements = [
-            smt.SetLogic('QF_ALL_SUPPORTED')
-        ];
+        this._statements = [];
+        if (logic) 
+            this._statements.push(smt.SetLogic(logic));
+        
 
         this.withAssignments = false;
         this.timeLimit = 180000;
@@ -27,15 +28,16 @@ export default class BaseSmtSolver {
     }
 
     dump() : void {
-        for (const stmt of this._statements)
+        for (const stmt of this._statements) 
             console.log(stmt.toString());
+        
     }
 
     forEachStatement(callback : (cb : smt.SNode, idx : number) => void) : void {
         this._statements.forEach(callback);
     }
 
-    async checkSat() : Promise<[boolean, Record<string,number|boolean>|undefined]> {
+    async checkSat() : Promise<[boolean, Record<string, number | boolean> | undefined]> {
         throw new Error('checkSat not implemented for this solver');
     }
 
