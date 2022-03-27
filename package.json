@@ -25,10 +25,12 @@
     "typescript": "^4.0.3"
   },
   "scripts": {
+    "build": "tsc --build tsconfig.json",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./lib ./test",
     "test": "nyc ts-node ./test/test",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "prepare": "tsc --build tsconfig.json"
+    "prepare": "npm run build",
+    "postinstall": "npm run build"
   },
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript"
